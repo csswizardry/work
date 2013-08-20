@@ -6,12 +6,257 @@
 
     <title>Work with me &ndash; CSS Wizardry &ndash; CSS, OOCSS, front-end architecture, performance and more, by Harry Roberts</title>
 
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,300italic">
+
+    <style>
+
+        /**
+         * Generic.
+         */
+        * {
+            margin:  0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
+        .cf,
+        .wrapper,
+            .cf:after,
+            .wrapper:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        h1, h2, h3, h4, h5, h6, hgroup,
+        ul, ol, dl,
+        blockquote, p, address,
+        table, fieldset,
+        figure, pre {
+            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        ul, ol, dl {
+            margin-left: 48px;
+            margin-left: 3rem;
+        }
+
+        /**
+         * Base.
+         */
+        html {
+            font:300 100%/1.5 Ubuntu, sans-serif;
+            color: #444;
+        }
+
+        a {
+            color: #f43059;
+        }
+
+        b, strong {
+            font-weight: 500;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight:300;
+            color:#f43059;
+        }
+
+        h1 {
+            font-size:36px;
+            font-size:2.25rem;
+            line-height:1.33333;
+        }
+
+        h2 {
+            font-size:30px;
+            font-size:1.875rem;
+            line-height:1.6;
+        }
+
+        h3 {
+            font-size:24px;
+            font-size:1.5rem;
+            line-height:1;
+        }
+
+        h4 {
+            font-size:20px;
+            font-size:1.25rem;
+            line-height:1.2;
+        }
+
+        h5 {
+            font-size:16px;
+            font-size:1rem;
+            line-height:1.5;
+        }
+
+        h6 {
+            font-size:14px;
+            font-size:0.875rem;
+            line-height:1.71429;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding-right: 24px;
+            padding-left:  24px;
+            margin-right: auto;
+            margin-left:  auto;
+        }
+
+        .masthead {
+            position: relative;
+            max-height: 1000px;
+            background: url(http://farm6.staticflickr.com/5341/8899790026_4baa708d7e_h.jpg) 75% top fixed;
+            box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.25) inset;
+            -webkit-background-size: cover;
+               -moz-background-size: cover;
+                    background-size: cover;
+        }
+
+            .masthead:after {
+                content: "";
+                position: absolute;
+                top:    0;
+                right:  0;
+                bottom: 0;
+                left:   0;
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+
+        .tagline {
+            position: absolute;
+            top: 50%;
+            right: 24px;
+            left:  24px;
+            z-index: 1;
+            margin-top: -24px;
+            font-size: 48px;
+            font-size: 3rem;
+            line-height: 1;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        /**
+         * Keep the tagline vertically centred at all sizes. It uses magic
+         * numbers, I’m afraid :(
+         */
+        @media screen and (max-width: 422px) {
+            .tagline {
+                margin-top: -72px;
+            }
+        }
+
+        @media screen and (max-width: 709px) {
+            .tagline {
+                margin-top: -48px;
+            }
+        }
+
+        .logo {
+            position: absolute;
+            top:  24px;
+            left: 24px;
+            z-index: 1;
+        }
+
+            .logo__img {
+                display: block;
+                border-radius: 4px;
+            }
+
+        .page,
+        .footer {
+            padding-top:    72px;
+            padding-bottom: 48px;
+        }
+
+        @media screen and (min-width: 720px) {
+
+            .content,
+            .sub-content {
+                float: left;
+            }
+
+            .sub-content {
+                width: 30%;
+            }
+
+            .content {
+                width: 60%;
+                margin-left: 10%;
+            }
+
+        }
+
+        .footer {
+            font: 75%/1.5 sans-serif;
+            background-color: #2a2a2a;
+            color: #aaa;
+        }
+
+    </style>
+
     <link rel="shortcut icon" href="icon.png">
     <link rel="apple-touch-icon-precomposed" href="icon.png">
 </head>
 <body>
 
-    
+    <div class="masthead" id="js-masthead">
+
+        <div class="wrapper">
+
+            <a href="http://csswizardry.com" title="Return to CSS Wizardry homepage" class="logo">
+                <img src="data:image/png;base64,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" alt="CSS Wizardry" class="logo__img" width="64" height="64" />
+            </a>
+
+            <h1 class="tagline">Consultant Front-end Architect</h1>
+
+        </div>
+
+    </div>
+
+    <script>
+        var masthead = document.getElementById("js-masthead");
+        var height   = window.innerHeight;
+
+        masthead.style.height = height + "px";
+    </script>
+
+    <div class="page">
+
+        <div class="wrapper">
+
+            <div class="sub-content">
+
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+            </div><!-- /sub-content -->
+
+            <div class="content">
+
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+
+            </div><!-- /content -->
+
+        </div><!-- /wrapper -->
+    </div><!-- /page -->    
+
+    <div class="footer"><div class="wrapper">
+        <p>Foo bar baz</p>
+    </div></div><!-- /wrapper /footer -->    
 
 <script>
     

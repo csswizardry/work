@@ -113,11 +113,19 @@
         .masthead {
             position: relative;
             max-height: 1000px;
-            background: url(http://farm6.staticflickr.com/5341/8899790026_4baa708d7e_h.jpg) 75% top fixed;
+            background: url(http://farm6.staticflickr.com/5341/8899790026_4baa708d7e_h.jpg) 75% top scroll;
             box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.25) inset;
             -webkit-background-size: cover;
                -moz-background-size: cover;
                     background-size: cover;
+        }
+
+        @media screen and (min-width: 720px) {
+
+            .masthead {
+                background-attachment: fixed;
+            }
+
         }
 
             .masthead:after {
@@ -150,15 +158,19 @@
          * numbers, I’m afraid :(
          */
         @media screen and (max-width: 422px) {
+
             .tagline {
                 margin-top: -72px;
             }
+
         }
 
         @media screen and (max-width: 709px) {
+
             .tagline {
                 margin-top: -48px;
             }
+
         }
 
         .logo {

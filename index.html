@@ -17,13 +17,17 @@
     <style>
 
         /**
+         * CSS is all inlined to save the extra request.
+         */
+
+        /**
          * Generic.
          */
         * {
             margin:  0;
             padding: 0;
             -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
+               -moz-box-sizing: border-box;
                     box-sizing: border-box;
         }
 
@@ -60,9 +64,14 @@
 
         a {
             color: #f43059;
+            text-decoration: none;
         }
 
-        b, strong {
+            a:hover {
+                text-decoration: underline;
+            }
+
+        b, strong, dt {
             font-weight: 500;
         }
 
@@ -132,6 +141,7 @@
             .masthead {
                 background-attachment: fixed;
             }
+
         }
 
             .masthead:after {

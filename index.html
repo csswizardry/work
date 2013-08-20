@@ -160,7 +160,6 @@
             right: 24px;
             left:  24px;
             z-index: 1;
-            margin-top: -24px;
             font-size: 48px;
             font-size: 3rem;
             line-height: 1;
@@ -172,19 +171,27 @@
         /**
          * Keep the tagline vertically centred at all sizes. It uses magic
          * numbers, I’m afraid :(
+         *
+         * 1. When on one line, this is half the masthead’s height.
+         * 2. When on three lines, this is half the masthead’s height.
+         * 3. When on two lines, this is half the masthead’s height.
          */
+        .tagline {
+            margin-top: -24px; /* [1] */
+        }
+
         @media screen and (max-width: 422px) {
 
             .tagline {
-                margin-top: -72px;
+                margin-top: -72px; /* [2] */
             }
 
         }
 
-        @media screen and (max-width: 709px) {
+        @media screen and (min-width: 422px) and (max-width: 709px) {
 
             .tagline {
-                margin-top: -48px;
+                margin-top: -48px; /* [3] */
             }
 
         }

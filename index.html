@@ -56,7 +56,7 @@
             margin-bottom: 1.5rem;
         }
 
-        ul, ol, dl {
+        ul, ol, dd {
             margin-left: 48px;
             margin-left: 3rem;
         }
@@ -121,6 +121,35 @@
             font-size: 14px;
             font-size: 0.875rem;
             line-height: 1.71429;
+        }
+
+        blockquote {
+            text-indent: -0.394em;
+        }
+
+        blockquote p:before {
+            content: "“";
+        }
+
+        blockquote p:after {
+            content: "";
+        }
+
+        blockquote p:last-of-type:after {
+            content: "”";
+        }
+
+        blockquote p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .source {
+            display: block;
+            text-indent: 0;
+        }
+
+        .source:before {
+            content: "—";
         }
 
         /**
@@ -266,6 +295,95 @@
             color: #aaa;
         }
 
+        /**
+         * Rhetorical intro.
+         */
+        .rhetorical {
+            font-size: 20px;
+            font-size: 1.25rem;
+            line-height: 1.2;
+        }
+
+            .rhetorical > dt,
+            .rhetorical > dd {
+                display: inline;
+            }
+
+            .rhetorical > dd {
+                margin-left: 0;
+                color: #999;
+            }
+
+        /**
+         * Buttons. Lifted partly from beautons: github.com/csswizardry/beautons
+         */
+        .btn {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: nowrap;
+            line-height: 3;
+            padding-right: 24px;
+            padding-left:  24px;
+            background-color: #f43059;
+        }
+
+        .btn,
+            .btn:hover,
+            .btn:active,
+            .btn:focus,
+            .btn:visited {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .btn:active,
+            .btn:focus {
+                outline: none;
+                position: relative;
+                top: 1px;
+            }
+
+        .btn--full{
+            width: 100%;
+            padding-right: 0;
+            padding-left:  0;
+            text-align: center;
+        }
+
+        /**
+         * Skills.
+         */
+        @media screen and (min-width: 540px) {
+
+            .skills-list {
+                margin-left: 0;
+                list-style: none;
+                -webkit-column-count: 2;
+                   -moz-column-count: 2;
+                        column-count: 2;
+                -webkit-column-gap: 24px;
+                   -moz-column-gap: 24px;
+                        column-gap: 24px;
+            }
+
+        }
+
+        @media screen and (min-width: 1000px) {
+
+            .skills-list {
+                -webkit-column-count: 3;
+                   -moz-column-count: 3;
+                        column-count: 3;
+            }
+
+        }
+
+        /**
+         * Misc.
+         */
+         ::selection        { background-color: #f43059; color:#fff; }
+         ::-moz-selection   { background-color: #f43059; color:#fff; }
+
     </style>
 
     <link rel="shortcut icon" href="http://csswizardry.com/icon.png">
@@ -304,17 +422,72 @@
 
             <div class="sub-content">
 
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                <p>
+                    <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
+                       class="btn  btn--full">Let’s do it!</a>
+                </p>
+
+                <p>I am currently <strong>accepting new projects</strong> for
+                <strong>October, 2013</strong>.</p>
+
+                <blockquote>
+                    <p>A quote from someone about how superawesome I am at web
+                    developering.</p>
+                    <b class="source">Some Dude(tte)</b>
+                </blockquote>
 
             </div><!-- /sub-content -->
 
             <div class="content">
 
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                <h2>Consulting, build, advising, training, workshops, speaking
+                and more…</h2>
 
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                <dl class="rhetorical">
 
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                    <dt>Want me to come and work in your office for a week?</dt>
+                    <dd>Sounds like fun!</dd>
+
+                    <dt>Starting an unusually large project?</dt>
+                    <dd>Let me help you get started!</dd>
+
+                    <dt>Want me to come and give a half-day workshop for your
+                    team?</dt>
+                    <dd>I’ll bring the doughnuts!</dd>
+
+                    <dt>Need someone to help build your new product?</dt>
+                    <dd>Let me just go grab my laptop!</dd>
+
+                    <dt>Need a front-end architect to help your team at your
+                    startup?</dt>
+                    <dd>I love new builds!</dd>
+
+                </dl>
+
+                <p>I specialise in writing, architecting and scaling CSS for big
+                websites in big teams. With a strong focus on performance,
+                pragmatism and robust development, I build front-ends that will
+                scale and that will last.</p>
+
+                <p>Currently, I am open to anything and everything. This
+                venture, for me, is about variety, meeting new and interesting
+                people, having fun, working on quality products and gaining new
+                experiences. Regardless of your budget, requirements, or
+                location, get in touch and we’ll see if we can work something
+                out. It’ll be cool.</p>
+
+                <ul class="skills-list">
+                    <li>CSS architecture</li>
+                    <li>RWD and mobile dev</li>
+                    <li>Workshops/training</li>
+                    <li>Speaking</li>
+                    <li>OOCSS</li>
+
+                    <li>Front-end performance</li>
+                    <li>Consulting/advising</li>
+                    <li>Short-term contracts</li>
+                    <li>Git</li>
+                </ul>
 
             </div><!-- /content -->
 

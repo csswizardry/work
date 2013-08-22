@@ -65,11 +65,13 @@
         }
 
         /**
-         * Base.
+         * 1. Makes the fluid masthead’s JS honour the full rendered height of
+         *    the viewport.
          */
         html {
             font: 300 100%/1.5 Ubuntu, sans-serif;
             color: #444;
+            overflow-y: scroll; /* [1] */
         }
 
         a {
@@ -423,9 +425,11 @@
 
     <script>
         var masthead = document.getElementById("js-masthead");
+        var width    = masthead.offsetWidth;
         var height   = window.innerHeight;
+        var padding  = (height/width) * 100;
 
-        masthead.style.height = height + "px";
+        masthead.style.paddingTop = padding + "%";
     </script>
 
     <div class="page">

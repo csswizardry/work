@@ -426,12 +426,12 @@
     </div>
 
     <script>
-        var masthead = document.getElementById("js-masthead");
-        var width    = masthead.offsetWidth;
-        var height   = window.innerHeight;
-        var padding  = (height/width) * 100;
+        var masthead       = document.getElementById("js-masthead");
+        var pageWidth      = masthead.offsetWidth;
+        var viewportHeight = window.innerHeight;
+        var fluidPadding   = (viewportHeight/pageWidth) * 100;
 
-        masthead.style.paddingTop = padding + "%";
+        masthead.style.paddingTop = fluidPadding + "%";
     </script>
 
     <div class="page">

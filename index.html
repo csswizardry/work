@@ -317,6 +317,24 @@
 
 
         /**
+         * Availability.
+         */
+        .availability {
+            text-align: center;
+            padding: 12px 24px;
+            color: #fff;
+        }
+
+        .availability--available {
+            background-color: #3f990f;
+        }
+
+        .availability--unavailable {
+            background-color: #9f102e;
+        }
+
+
+        /**
          * Rhetorical intro.
          */
         .rhetorical {
@@ -432,19 +450,21 @@
 
             <div class="sub-content">
 
-                <p>
-                    <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
-                       class="btn  btn--full">Let’s do it!</a>
+                <p class="availability  availability--available">
+                    I am currently <strong>accepting new projects</strong> for
+                    <strong>October,&nbsp;2013</strong>.
                 </p>
-
-                <p>I am currently <strong>accepting new projects</strong> for
-                <strong>October, 2013</strong>.</p>
 
                 <blockquote>
                     <p>A quote from someone about how superawesome I am at web
                     developering.</p>
                     <b class="source">Some Dude(tte)</b>
                 </blockquote>
+
+                <p>
+                    <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
+                       class="btn  btn--full">Let’s do it!</a>
+                </p>
 
             </div><!-- /sub-content -->
 

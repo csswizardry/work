@@ -174,13 +174,13 @@
         /**
          * Full-width photo masthead.
          *
-         * 1. Photo by Ashley Baxter: flickr.com/photos/rockersdelight/9161016028/
+         * Photo by Ashley Baxter: flickr.com/photos/rockersdelight/9161016028/
          */
         .masthead {
             position: relative;
             min-height: 320px;
             max-height: 1000px;
-            background: url(img/css/masthead/01.jpg) center center scroll #2a2a2a; /* [1] */
+            background-position:center;
             -webkit-background-size: cover;
                -moz-background-size: cover;
                     background-size: cover;
@@ -461,11 +461,8 @@
 </head>
 <body>
 
-    <div class="preload">
-        <img src="img/css/masthead/01.jpg" alt="" width="1" height="1">
-    </div>
-
-    <div class="masthead" id="js-masthead">
+    <div class="masthead  resrc" id="js-masthead"
+         data-src="http://app.resrc.it/http://csswizardry.com/work/img/css/masthead/01.jpg">
 
         <div class="wrapper">
 
@@ -570,19 +567,46 @@
         </div><!-- /wrapper -->
     </div><!-- /footer -->    
 
-<script>
-    
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1856861-4']);
-    _gaq.push(['_trackPageview']);
-    
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    
-</script>
+    <script>
+
+        function masthead(el, callback) {
+
+            var pageWidth       = el.offsetWidth;
+            var viewportHeight  = window.innerHeight;
+            var fluidPadding    = (viewportHeight/pageWidth) * 100;
+            el.style.paddingTop = fluidPadding + "%";
+
+            callback(el);
+        }
+
+        /**
+         * ReSRCit v0.6.5
+         * http://www.resrc.it
+         * Copyright (C) 2013 ReSRC Ltd.
+         */
+
+        (function(e,t,n){"use strict";function b(e,t){var n={};if(!t)return e;for(var r in e)r in t?n[r]=t[r]:n[r]=e[r];return n}function w(e){return e==1?"https://":"http://"}function E(e){var t=[],r=n.getElementsByTagName("*"),i=r.length,s=new RegExp("(^|\\s)"+e+"(\\s|$)"),o,u;for(o=0,u=0;o<i;o++)if(s.test(r[o].className)){t[u]=r[o];u++}return t}function S(e,t){var n=new Image;n.src=t;n.onload=function(){e.src=t}}function x(e,t){var n=new Image;n.src=t;n.onload=function(){e.style.backgroundImage="url("+t+")"}}function T(e,r){var i;e.currentStyle?i=e.currentStyle.getAttribute("backgroundImage"):t.getComputedStyle&&(i=n.defaultView.getComputedStyle(e,null).getPropertyValue(r));return i}function N(e){var t=function(e){var t=d,n=[],r;while(r=t.exec(e))n.push(r[1]);return n};return t(e)}function C(e){var t=/\((.*?)\)/g;return t.test(e)}e.options=e.options||{};var r={resrcOnLoad:!0,resrcOnResize:!0,resrcOnPinch:!1,ssl:!1,resrcClass:"resrc",server:"app.resrc.it",pixelRounding:10},i=e.options,s=b(r,i),o=s.resrcOnLoad,u=s.resrcOnResize,a=s.resrcOnPinch,f=s.server,l=s.resrcClass,c=w(s.ssl),h=s.pixelRounding,p=100,d=/\((.*?)\)/g,v=/url\(('?"?)(.*?)\1\)/gi,m=0,g=200,y;Array.prototype.indexOf||(Array.prototype.indexOf=function(e){for(var t=0;t<this.length;t++)if(this[t]===e)return t;return-1});"filter"in Array.prototype||(Array.prototype.filter=function(e,t){var n=[],r;for(var i=0,s=this.length;i<s;i++)i in this&&e.call(t,r=this[i],i,this)&&n.push(r);return n});String.prototype.startsWith=function(e){return this.match("^"+e)==e};String.prototype.contains=function(e){return this.indexOf(e)>=0};String.prototype.trimStart=function(e){var t=this;while(t.startsWith(e))t=t.substring(1);return t};String.prototype.isNumber=function(){return!isNaN(parseFloat(this))&&isFinite(this)};Array.prototype.getItemIndexPosition=function(e){for(var t=0;t<this.length;t++)if(e==""){if(this[t]=="")return t}else{var n=new RegExp(e,["i"]),r=n.exec(this[t]);if(r!=null)return t}return-1};Array.prototype.removeItems=function(e){for(var t=0;t<this.length;t++)if(e==""){if(this[t]==""){this.splice(t,1);t--}}else{var n=new RegExp(e,["i"]),r=n.exec(this[t]);if(r!=null){this.splice(t,1);t--}}return this};var k,L,A,O,M,_,D,P,H,B,j,F,I,q,R;k=function(e){var t=e.getAttribute("data-resrc-gesture")||e.setAttribute("data-resrc-gesture","true");t||(e.addEventListener?e.addEventListener("gestureend",D,!1):e.attachEvent&&e.attachEvent("gestureend",D))},L=function(){o&&A()},A=function(){var e=E(l);for(var t=0;t<e.length;t++)O(e[t])},O=function(e,t){if(e!==null){t==null&&(t=1);typeof e[0]=="undefined"&&(e=[e]);for(var n=0;n<e.length;n++){var e=e[n];if(typeof e=="undefined"||e==null)return;var r=e.tagName.toLowerCase();if(r=="img"){var i=e.src;if(i)S(e,M(e,i,t,function(){a&&k(e[n])}));else{var s=e.getAttribute("data-src");e.setAttribute("src",M(e,s,t,function(){a&&k(e)}))}}else{var s=e.getAttribute("data-src");if(!s){var o=T(e,"background-image").replace(v,"$2");o!="none"&&x(e,M(e,o,t,function(){}))}else x(e,M(e,s,t,function(){}))}}}},M=function(e,t,n,r){var i,s,o,u,a,l;u=P(e)*n;a=B(e);var d=t.replace(f,"");if(d.contains("//")){var v=d.lastIndexOf("//");i=d.substring(v+2);s=d.substring(0,v).toLowerCase();s=s.replace("/http:","").replace("http:","").replace("/https:","").replace("https:","");s=s.trimStart("/");o=s.split("/");o=o.removeItems("")}else{o=[];i=d}u<p?l="s=w"+u+",pd"+a:l="s=w"+Math.ceil(u/h)*h+",pd"+a;var m=o.getItemIndexPosition("s="),g=o.getItemIndexPosition("o=.*");m!==-1?o.splice(m,1,l):g!==-1?o.splice(g,0,l):o.push(l);var y=o[o.getItemIndexPosition("o=.*")];if(C(y)){var b="o="+N(y);o.splice(g,1,b);o.join()}var E=c+f+"/"+o.join("/")+"/"+w(c)+i;r(E);return E},P=function(e){if(e.offsetWidth!==0)return e.offsetWidth;var t,n,r={},i={position:"absolute",visibility:"hidden",display:"block"};for(n in i){r[n]=e.style[n];e.style[n]=i[n]}t=e.offsetWidth;for(n in i)e.style[n]=r[n];return t};H=function(){return t.devicePixelRatio?t.devicePixelRatio:1},B=function(e){var t=e.getAttribute("data-resrc-dpi")||"",n;t!=""?t.isNumber()?n=parseFloat(t):n=H():n=H();return n},D=function(){var e=Math.round(screen.width/t.innerWidth*10)/10;S(event.target,M(event.target,event.target.src,e,function(){}))},R=function(){t.addEventListener?t.addEventListener("resize",j,!1):t.attachEvent&&t.attachEvent("onresize",j)},j=function(){m!==F()&&q()},F=function(){return n.documentElement.clientWidth||n.body&&n.body.clientWidth||1024},I=function(){A()},q=function(){t.clearTimeout(y);y=t.setTimeout(I,g)};e.resrc=function(e,t){typeof e!="undefined"&&O(e,t)};e.resrcAll=function(){A()};u&&R();if(t.addEventListener){t.addEventListener("DOMContentLoaded",function(){L();t.removeEventListener("load",L(),!1)},!1);t.addEventListener("load",L(),!1)}else t.attachEvent&&t.attachEvent("onload",function(){L()})})(this.resrc=this.resrc||{},this,document);
+
+
+        masthead(document.getElementById("js-masthead"),  function(el) {
+            resrc.resrc(el);
+        });
+
+    </script>
+
+    <script>
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1856861-4']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+    </script>
 
 </body>
 </html>

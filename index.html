@@ -432,12 +432,23 @@
          * Pull quotes.
          */
         .pull-quote {
-            font-size: 20px;
-            font-size: 1.25rem;
-            line-height: 1.2;
+            font-size: 18px;
+            font-size: 1.125rem;
+            line-height: 1.333333333;
+            font-style: italic;
+            color: #999;
             padding-left: 36px;
             border-left: 12px solid #f0f0f0;
         }
+
+            /**
+             * 1. Insert an empty line’s worth of whitespace between the quote
+             *    and the source.
+             */
+            .pull-quote__source {
+                font-style: normal;
+                padding-top :24px; /* [1] */
+            }
 
 
         /**
@@ -504,7 +515,7 @@
                 <blockquote class="pull-quote">
                     <p>I have learned so much in terms of OOCSS and other things
                     from Harry… He’s brilliant… I’d hire him tomorrow.</p>
-                    <b class="source"><a href="http://unfinished.bz/29">Andrew
+                    <b class="source  pull-quote__source"><a href="http://unfinished.bz/29">Andrew
                     Clarke</a></b>
                 </blockquote>
 
@@ -541,7 +552,7 @@
                     pushing back on design requirements that could adversely
                     effect performance and working out better and faster ways of
                     achieving the same result.</p>
-                    <b class="source">Dan Rathbone, Lead Performance Engineer, BSkyB</b>
+                    <b class="source  pull-quote__source">Dan Rathbone, Lead Performance Engineer, BSkyB</b>
                 </blockquote>
 
                 <p>Currently, I am open to anything and everything. This

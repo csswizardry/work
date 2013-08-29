@@ -36,15 +36,6 @@
                     box-sizing: border-box;
         }
 
-        .cf,
-        .wrapper,
-            .cf:after,
-            .wrapper:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
         /**
          * Single-direction margin declarations:
          * csswizardry.com/2012/06/single-direction-margin-declarations
@@ -175,6 +166,9 @@
 
         /**
          * Page constraint.
+         *
+         * 1. Clear floats. Using this method fixes a weird Firefox `max-width`
+         * issue on images. Bizarre.
          */
         .wrapper {
             width: 100%;
@@ -183,6 +177,7 @@
             padding-left:  24px;
             margin-right: auto;
             margin-left:  auto;
+            overflow: hidden; /* [1] */
         }
 
 

@@ -462,6 +462,38 @@
 
 
         /**
+         * Yellow-fade.
+         */
+        :target {
+            outline: 10px solid transparent;
+            -webkit-animation: yellow-fade 3s;
+               -moz-animation: yellow-fade 3s;
+                    animation: yellow-fade 3s;
+        }
+
+        @-webkit-keyframes yellow-fade{
+            5%{
+                background-color:#ffc;
+                outline: 10px solid #ffc;
+            }
+        }
+
+        @-moz-keyframes yellow-fade{
+            5%{
+                background-color:#ffc;
+                outline: 10px solid #ffc;
+            }
+        }
+
+        @keyframes yellow-fade{
+            5%{
+                background-color:#ffc;
+                outline: 10px solid #ffc;
+            }
+        }
+
+
+        /**
          * Misc.
          */
         .preload {

@@ -1,0 +1,1 @@
+java -jar ~/Tools/htmlcompressor-1.5.3.jar -o index.html --compress-css --preserve-comments source.html

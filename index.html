@@ -188,7 +188,6 @@
          */
         .masthead {
             position: relative;
-            overflow: hidden;
             min-height: 320px;
             max-height: 1000px;
             background: url(img/css/masthead/01.jpg) center center scroll #2a2a2a; /* [1] */
@@ -208,73 +207,6 @@
             }
 
         }
-
-            /**
-             * Pointer.
-             */
-            .masthead:before {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                margin-top:  -24px;
-                margin-left: -48px;
-                border-width: 12px 48px;
-                border-style: solid;
-                border-color: transparent;
-                border-top-color: rgba(255, 255, 255, 0.5);
-                -webkit-animation: arrow-bob 1.5s infinite ease-out;
-                   -moz-animation: arrow-bob 1.5s infinite ease-out;
-                        animation: arrow-bob 1.5s infinite ease-out;
-            }
-
-            @-webkit-keyframes arrow-bob {
-
-                0% {
-                    top: 100%
-                }
-
-                50% {
-                    top: 99%
-                }
-
-                100% {
-                    top: 100%
-                }
-
-            }
-
-            @-moz-keyframes arrow-bob {
-
-                0% {
-                    top: 100%
-                }
-
-                50% {
-                    top: 99%
-                }
-
-                100% {
-                    top: 100%
-                }
-
-            }
-
-            @keyframes arrow-bob {
-
-                0% {
-                    top: 100%
-                }
-
-                50% {
-                    top: 99%
-                }
-
-                100% {
-                    top: 100%
-                }
-
-            }
 
             /**
              * Translucent overlay.

@@ -119,6 +119,17 @@
             line-height: 1.71429;
         }
 
+        /**
+         * 1. Force small text to honour its `line-height`.
+         */
+        small {
+            font-size: 12px;
+            font-size: 0.75rem;
+            line-height: 2;
+            display: inline-block; /* [1] */
+            color: #999;
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -749,6 +760,10 @@
                        class="btn  btn--full  btn--large">Arrange a review</a>
                 </p>
 
+                <hr class="rule">
+
+                <p><small>*Terms and conditions apply.</small></p>
+
             </div><!-- /sub-content -->
 
 
@@ -761,7 +776,7 @@
 
                 <p>Unsure if you’re heading in the right direction? Have a mature
                    project that you’re struggling to scale? Interested to know
-                   how you or your team can improve their work?</p>
+                   how you and your team can improve your work?</p>
 
                 <blockquote class="pull-quote" id="quote:darius-contractor">
                     <p>We sliced 1.5s off PhotoSugar’s page load times using
@@ -776,7 +791,7 @@
                    <b>sanity</b>, <b>architectural/scalability concerns</b> and
                    a lot, <em>lot</em> more.</p>
 
-                <p>How it works:</p>
+                <p>How it works*:</p>
 
                 <ol>
                     <li>You give me access to your codebase.</li>

@@ -186,6 +186,35 @@
                     background-size: cover;
         }
 
+        .band--01   { background-image: url(img/css/bands/01--small.jpg); }
+        .band--02   { background-image: url(img/css/bands/02--small.jpg); }
+        .band--03   { background-image: url(img/css/bands/03--small.jpg); }
+
+        @media screen and (min-width: 480px) {
+
+            .band--01   { background-image: url(img/css/bands/01--medium.jpg); }
+            .band--02   { background-image: url(img/css/bands/02--medium.jpg); }
+            .band--03   { background-image: url(img/css/bands/03--medium.jpg); }
+
+        }
+
+        @media screen and (min-width: 720px) {
+
+            .band--01   { background-image: url(img/css/bands/01--large.jpg); }
+            .band--02   { background-image: url(img/css/bands/02--large.jpg); }
+            .band--03   { background-image: url(img/css/bands/03--large.jpg); }
+
+        }
+
+        @media screen and (min-width: 1024px) {
+
+            .band--01   { background-image: url(img/css/bands/01--huge.jpg); }
+            .band--02   { background-image: url(img/css/bands/02--huge.jpg); }
+            .band--03   { background-image: url(img/css/bands/03--huge.jpg); }
+
+        }
+
+
         /**
          * Fix the background on larger screens.
          */
@@ -193,7 +222,7 @@
 
             .band {
                 background-attachment: fixed;
-                box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.25) inset;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
             }
 
         }

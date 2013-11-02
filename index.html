@@ -288,6 +288,51 @@
 
 
         /**
+         * Tabs.
+         */
+        .tabs {
+            list-style: none;
+            margin: 0;
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            text-align: center;
+            background-color: #f43059;
+            font-size: 12px;
+            font-size: 0.75rem;
+            line-height: 2;
+        }
+
+            .tabs > li {
+                display: table-cell;
+                vertical-align: middle;
+                border: 0 solid rgba(0, 0, 0, 0.1);
+                border-width: 0 1px;
+                border-right-color: rgba(255, 255, 255, 0.15);
+            }
+
+            .tabs > li:first-child {
+                border-left-width: 0;
+            }
+
+            .tabs > li:last-child {
+                border-right-width: 0;
+            }
+
+                .tabs > li > a {
+                    color: #fff;
+                    padding: 12px;
+                    display: block;
+                    font-weight: 300;
+                }
+
+                .tabs__current {
+                    text-decoration: underline;
+                    cursor: text;
+                }
+
+
+        /**
          * Hovering little logo.
          */
         .logo {

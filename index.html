@@ -643,23 +643,10 @@
             </div><!-- /content -->
 
         </div><!-- /wrapper -->
-    </div><!-- /page -->    
+    </div><!-- /page -->
 
     <div class="band  js-band" style="background-image: url(img/css/masthead/01.jpg);">
     </div>
-
-    <script>
-        var bands = new Array();
-        bands = document.getElementsByClassName("js-band");
-
-        var pageWidth      = bands[0].offsetWidth;
-        var viewportHeight = window.innerHeight;
-        var fluidPadding   = (viewportHeight/pageWidth) * 100;
-
-        for(band in bands) {
-            bands[band].style.paddingTop = fluidPadding + "%";
-        }
-    </script>
 
     <div class="footer">
         <div class="wrapper">
@@ -668,21 +655,50 @@
             <a href="https://twitter.com/csswizardry">@csswizardry</a></p>
 
         </div><!-- /wrapper -->
-    </div><!-- /footer -->    
+    </div><!-- /footer -->
 
-<script>
-    
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1856861-4']);
-    _gaq.push(['_trackPageview']);
-    
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    
-</script>
+    <script>
+
+        (function() {
+
+            // initialise image masthead "bands"
+
+            var bands = document.getElementsByClassName("js-band");
+            var totalBands = bands.length;
+            var viewportHeight = window.innerHeight;
+            var fluidPadding;
+            var pageWidth;
+
+            if (totalBands > 0) {
+
+                pageWidth = bands[0].offsetWidth;
+                fluidPadding = (viewportHeight / pageWidth) * 100;
+
+                for (var i = 0; i < totalBands; i++) {
+                    bands[i].style.paddingTop = fluidPadding + "%";
+                }
+
+            }
+
+            // initialise google analytics
+
+            var _gaq = _gaq || [];
+            var channel = 'https:' == document.location.protocol ? 'https://ssl' : 'http://www';
+            var ga = document.createElement('script');
+            var s = document.getElementsByTagName('script')[0];
+
+            _gaq.push(['_setAccount', 'UA-1856861-4']);
+            _gaq.push(['_trackPageview']);
+
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = channel + '.google-analytics.com/ga.js';
+
+            s.parentNode.insertBefore(ga, s);
+
+        }());
+
+    </script>
 
 </body>
 </html>

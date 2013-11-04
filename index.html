@@ -174,8 +174,7 @@
         .wrapper {
             width: 100%;
             max-width: 1200px;
-            padding-right: 24px;
-            padding-left:  24px;
+            padding: 72px 24px 48px;
             margin-right: auto;
             margin-left:  auto;
             overflow: hidden; /* [1] */
@@ -367,40 +366,43 @@
         /**
          * Page-level stuff.
          */
-        .page,
-        .footer {
-            padding-top:    72px;
-            padding-bottom: 48px;
-        }
 
         @media screen and (min-width: 720px) {
 
-            .content,
-            .sub-content {
-                float: left;
-            }
-
-            .sub-content {
-                width: 30%;
-            }
-
+            /**
+             * Abstract layout into a quasi-grid-system.
+             */
             .content {
-                width: 70%;
-                padding-left: 10%;
+                margin-left: -72px;
+                overflow: hidden;
             }
+
+                .content__item {
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-left: 72px;
+                }
+
+                .content__sub {
+                    width: 35%;
+                }
+
+                .content__main {
+                    width: 65%;
+                }
 
             /**
-             * Reverse the content and sub-content positions.
+             * Reversed-order content blocks.
              */
-            .page--rev .sub-content,
-            .page--rev .content {
-                float: right;
+            .content--rev {
+                direction: rtl;
+                text-align: left;
             }
 
-            .page--rev .content {
-                padding-left:  0;
-                padding-right: 10%;
-            }
+                .content--rev .content__item {
+                    direction: ltr;
+                    text-align: left;
+                }
 
         }
 
@@ -552,7 +554,7 @@
         /**
          * Yellow-fade.
          */
-        blockquote:target {
+        .pull-quote:target {
             outline: 10px solid transparent;
             -webkit-animation: yellow-fade 5s;
                -moz-animation: yellow-fade 5s;
@@ -630,35 +632,35 @@
 
 
 
-    <div class="page">
+    <div class="wrapper">
 
-        <div class="wrapper">
+        <section class="content">
 
-            <div class="sub-content">
+            <div class="content__item  content__sub">
 
                 <blockquote class="pull-quote" id="quote:andrew-clarke">
                     <p>I have learned so much in terms of OOCSS and other things
-                       from Harry… He’s brilliant… I’d hire him tomorrow.</p>
+                    from Harry… He’s brilliant… I’d hire him tomorrow.</p>
                     <b class="source  pull-quote__source"><a href="http://unfinished.bz/29">Andrew
-                       Clarke</a></b>
+                    Clarke</a></b>
                 </blockquote>
 
                 <hr class="rule">
 
                 <p class="availability  availability--available">
-                   I am currently <strong>available</strong> for development
-                   and consultancy projects.
+                I am currently <strong>available</strong> for development
+                and consultancy projects.
                 </p>
 
                 <hr class="rule  rule--mobile">
 
-            </div><!-- /sub-content -->
+            </div><!-- /content__sub
 
 
 
 
 
-            <div class="content">
+         --><div class="content__item  content__main">
 
                 <h2>I work with tech teams to build great products…</h2>
 
@@ -676,31 +678,31 @@
                 </dl>
 
                 <p>Hi, I’m Harry. I specialise in writing, architecting and
-                   scaling CSS for big websites in big teams. With a strong focus
-                   on <b>performance</b>, <b>pragmatism</b>, <b>agile</b>, and
-                   <b>robust development</b>, I build front-ends that will scale
-                   and that will last. Learn more <a href="/about/">about me</a>,
-                   <a href="http://csswizardry.com/2013/10/lets-work-together/">this
-                   adventure</a>, or take a look at <a href="/csscv/">my&nbsp;CV</a>.</p>
+                scaling CSS for big websites in big teams. With a strong focus
+                on <b>performance</b>, <b>pragmatism</b>, <b>agile</b>, and
+                <b>robust development</b>, I build front-ends that will scale
+                and that will last. Learn more <a href="/about/">about me</a>,
+                <a href="http://csswizardry.com/2013/10/lets-work-together/">this
+                adventure</a>, or take a look at <a href="/csscv/">my&nbsp;CV</a>.</p>
 
                 <blockquote class="pull-quote" id="quote:andrew-betts">
                     <p>We’re great fans of Harry at <a href="http://labs.ft.com/">FT Labs</a>,
-                       his work has had a lot of influence over the CSS architecture
-                       of the Financial Times web app.</p>
+                    his work has had a lot of influence over the CSS architecture
+                    of the Financial Times web app.</p>
                     <b class="source  pull-quote__source"><a href="https://twitter.com/triblondon">Andrew Betts</a>,
-                       Director, FT Labs</b>
+                    Director, FT Labs</b>
                 </blockquote>
 
                 <p>Currently, I am open to anything and everything. This
-                   venture, for me, is about <b>variety</b>, meeting new and
-                   <b>interesting people</b>, having <b>fun</b>, working on
-                   <b>quality products</b> and gaining new experiences. Regardless
-                   of your budget, requirements, or location, get in touch and
-                   we’ll see if we can work something out. It’ll&nbsp;be&nbsp;cool.</p>
+                venture, for me, is about <b>variety</b>, meeting new and
+                <b>interesting people</b>, having <b>fun</b>, working on
+                <b>quality products</b> and gaining new experiences. Regardless
+                of your budget, requirements, or location, get in touch and
+                we’ll see if we can work something out. It’ll&nbsp;be&nbsp;cool.</p>
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
-                       class="btn  btn--full  btn--large">Get in touch!</a>
+                    class="btn  btn--full  btn--large">Get in touch!</a>
                 </p>
 
                 <!--
@@ -711,10 +713,11 @@
                 </blockquote>
                 -->
 
-            </div><!-- /content -->
+            </div><!-- /content__main -->
 
-        </div><!-- /wrapper -->
-    </div><!-- /page -->
+        </section><!-- /content -->
+
+    </div><!-- /wrapper -->
 
 
 
@@ -743,55 +746,32 @@
 
 
 
-    <div class="page  page--rev">
-        <div class="wrapper">
+    <div class="wrapper">
 
-            <div class="sub-content">
+        <section class="content">
 
-                <blockquote class="pull-quote" id="quote:andrew-clarke">
-                    <p>More people need to benefit from what he has to offer.</p>
-                    <b class="source  pull-quote__source">Rob Farnell, Lead Creative Designer, BSkyB</b>
-                </blockquote>
-
-                <hr class="rule">
-
-                <p>
-                    <a href="mailto:harry@csswizardry.com?subject=Code%20review"
-                       class="btn  btn--full  btn--large">Arrange a review</a>
-                </p>
-
-                <hr class="rule">
-
-                <p><small>Terms and conditions apply.</small></p>
-
-            </div><!-- /sub-content -->
-
-
-
-
-
-            <div class="content">
+            <div class="content__item  content__main">
 
                 <h2>Code reviews</h2>
 
                 <p>Unsure if you’re headed in the right direction? Have a mature
-                   project that you’re struggling to scale? Interested to know
-                   how you and your team can improve your work? Just want to
-                   become a better developer? A remote code review could be
-                   <em>exactly</em> what you need.</p>
+                project that you’re struggling to scale? Interested to know
+                how you and your team can improve your work? Just want to
+                become a better developer? A remote code review could be
+                <em>exactly</em> what you need.</p>
 
                 <blockquote class="pull-quote" id="quote:darius-contractor">
                     <p>We sliced 1.5s off PhotoSugar’s page load times using
-                       Harry’s knowledge.</p>
+                    Harry’s knowledge.</p>
                     <b class="source  pull-quote__source">Darius Contractor,
-                       <a href="http://www.photosugar.com/">PhotoSugar</a></b>
+                    <a href="http://www.photosugar.com/">PhotoSugar</a></b>
                 </blockquote>
 
                 <p>A quick-turnaround, off-the-shelf, fixed price service I offer
-                   is <i>remote code reviews</i>. The review covers things like
-                   <b>syntax and formatting</b>, <b>efficiency</b>,
-                   <b>architecture</b>, <b>sanity</b>, <b>architectural/scalability
-                   concerns</b> and a lot, <em>lot</em> more.</p>
+                is <i>remote code reviews</i>. The review covers things like
+                <b>syntax and formatting</b>, <b>efficiency</b>,
+                <b>architecture</b>, <b>sanity</b>, <b>architectural/scalability
+                concerns</b> and a lot, <em>lot</em> more.</p>
 
                 <p>How it works:</p>
 
@@ -807,29 +787,56 @@
                 </ol>
 
                 <p>The practical upshot of which is an improved codebase for the
-                   particular product, site or app in question, but also—and more
-                   importantly—a formal document based around your own code which
-                   would prevent you making the same mistakes in future. A tailored
-                   lesson, centred around your own work.</p>
+                particular product, site or app in question, but also—and more
+                importantly—a formal document based around your own code which
+                would prevent you making the same mistakes in future. A tailored
+                lesson, centred around your own work.</p>
 
                 <p>This service is perfect for projects whose budget typically
-                   would not stretch to getting me on-site for a number of days,
-                   but do require the same type and quality of input.</p>
+                would not stretch to getting me on-site for a number of days,
+                but do require the same type and quality of input.</p>
 
                 <blockquote class="pull-quote" id="quote:dan-rathbone">
                     <p>Harry is acutely aware of the performance implications
-                       of what we do and is always keen to improve the speed of the
-                       things we’re working on. He’s great at rationalising and
-                       pushing back on design requirements that could adversely
-                       effect performance and working out better and faster ways of
-                       achieving the same result.</p>
-                    <b class="source  pull-quote__source">Dan Rathbone, Lead Performance Engineer, BSkyB</b>
+                    of what we do and is always keen to improve the speed of the
+                    things we’re working on. He’s great at rationalising and
+                    pushing back on design requirements that could adversely
+                    effect performance and working out better and faster ways of
+                    achieving the same result.</p>
+                    <b class="source  pull-quote__source">Dan Rathbone, Lead
+                       Performance Engineer, BSkyB</b>
                 </blockquote>
 
-            </div><!-- /content -->
+            </div><!-- /content__main
 
-        </div><!-- /wrapper -->
-    </div><!-- /page -->
+
+
+
+
+         --><div class="content__item  content__sub">
+
+                <blockquote class="pull-quote" id="quote:rob-farnell">
+                    <p>More people need to benefit from what he has to offer.</p>
+                    <b class="source  pull-quote__source">Rob Farnell, Lead
+                       Creative Designer, BSkyB</b>
+                </blockquote>
+
+                <hr class="rule">
+
+                <p>
+                    <a href="mailto:harry@csswizardry.com?subject=Code%20review"
+                    class="btn  btn--full  btn--large">Arrange a review</a>
+                </p>
+
+                <hr class="rule">
+
+                <p><small>Terms and conditions apply.</small></p>
+
+            </div><!-- /content__sub -->
+
+        </section><!-- /content -->
+
+    </div><!-- /wrapper -->
 
 
 
@@ -858,30 +865,18 @@
 
 
 
-    <div class="page">
-        <div class="wrapper">
+    <div class="wrapper">
 
-            <div class="sub-content">
-
-                <p>
-                    <a href="mailto:harry@csswizardry.com?subject=Request%20to%20speak"
-                       class="btn  btn--full  btn--large">Book me</a>
-                </p>
-
-            </div><!-- /sub-content -->
-
-
-
-
-
-            <div class="content">
+        <section class="content  content--rev">
+            
+            <div class="content__item  content__main">
 
                 <h2>Speaking and workshops</h2>
 
                 <p>I speak internationally at design and development conferences,
-                   usually on the subjects of front-end development, large-scale
-                   CSS and its architecture and scalability, front-end performance,
-                   pragmatic approaches to building products, and more.</p>
+                usually on the subjects of front-end development, large-scale
+                CSS and its architecture and scalability, front-end performance,
+                pragmatic approaches to building products, and more.</p>
 
                 <blockquote class="pull-quote" id="quote:roel-n">
                     <p>[Harry] changed the way I’ll be writing CSS from now on.
@@ -890,10 +885,10 @@
                 </blockquote>
 
                 <p>I also run workshops covering similar topics. I am available
-                   for workshops held at public events, or privately—at your
-                   offices—with your company or team. To see a list of my
-                   previous and upcoming engagements, please see my
-                   <a href="/speaking/">speaking page</a>.</p>
+                for workshops held at public events, or privately—at your
+                offices—with your company or team. To see a list of my
+                previous and upcoming engagements, please see my
+                <a href="/speaking/">speaking page</a>.</p>
 
                 <blockquote class="pull-quote" id="quote:peter-van-grieken">
                     <p>So glad I did [Harry’s] workshop [on] Wednesday. An entire day of this,
@@ -901,10 +896,24 @@
                     <b class="source  pull-quote__source"><a href="https://twitter.com/petervangrieken/status/388615139102294016">Peter van Grieken</a></b>
                 </blockquote>
 
-            </div><!-- /content -->
+            </div><!-- /content__main
 
-        </div><!-- /wrapper -->
-    </div><!-- /page -->
+
+
+
+
+            --><div class="content__item  content__sub">
+
+                <p>
+                    <a href="mailto:harry@csswizardry.com?subject=Request%20to%20speak"
+                    class="btn  btn--full  btn--large">Book me</a>
+                </p>
+
+            </div><!-- /content__sub -->
+
+        </section><!-- /content -->
+
+    </div><!-- /wrapper -->
 
 
 

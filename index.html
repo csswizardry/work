@@ -248,6 +248,86 @@
         }
 
             /**
+             * Pointer arrow.
+             */
+            .band:before {
+                content: "...";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -12px;
+                z-index: 1;
+                width:  24px;
+                height: 24px;
+                border: 0 solid #fff;
+                border-width: 0 5px 5px 0;
+                opacity: 0;
+                -webkit-animation: arrow-fade 1.5s linear;
+                   -moz-animation: arrow-fade 1.5s linear;
+                        animation: arrow-fade 1.5s linear;
+                -webkit-transform: rotate(45deg);
+                   -moz-transform: rotate(45deg);
+                        transform: rotate(45deg);
+            }
+
+            @-webkit-keyframes arrow-fade {
+
+                from {
+                    bottom: 48px;
+                    opacity: 1;
+                    opacity: 0;
+                }
+
+                5% {
+                    opacity: 1;
+                }
+
+                to {
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+            }
+
+            @-moz-keyframes arrow-fade {
+
+                from {
+                    bottom: 48px;
+                    opacity: 1;
+                    opacity: 0;
+                }
+
+                5% {
+                    opacity: 1;
+                }
+
+                to {
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+            }
+
+            @keyframes arrow-fade {
+
+                from {
+                    bottom: 48px;
+                    opacity: 1;
+                    opacity: 0;
+                }
+
+                5% {
+                    opacity: 1;
+                }
+
+                to {
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+            }
+
+            /**
              * Translucent overlay.
              */
             .band:after {

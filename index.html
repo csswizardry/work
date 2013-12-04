@@ -194,6 +194,7 @@
          * Band 1: Ashley Baxter (@iamashley)
          * Band 2: Naomi Atkinson (@naomisusi)
          * Band 3: Stefan Nitzsche (@stn1978)
+         * Band 4: Matti Besser (@m_besser)
          */
         .band {
             position: relative;
@@ -638,6 +639,21 @@
 
 
         /**
+         * quote-header.
+         */
+        .quote-header {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+            font-size: 0.75rem;
+            line-height: 2;
+            text-align: right;
+            margin-bottom: 0;
+            color: #999;
+        }
+
+
+        /**
          * Price.
          */
         .price {
@@ -663,6 +679,29 @@
                -moz-animation: yellow-fade 5s;
                     animation: yellow-fade 5s;
         }
+
+        /**
+         * Testimonials list.
+         */
+        .testimonials {
+            margin: 0;
+            list-style: none;
+        }
+
+            .testimonials__item {
+                padding-left: 20%;
+            }
+
+            .testimonials__item:nth-of-type(even) {
+                padding-right: 20%;
+                padding-left: 0;
+                text-align: right;
+            }
+
+            .testimonials__item .pull-quote {
+                padding-left: 0;
+                border-left: none;
+            }
 
         @-webkit-keyframes yellow-fade{
             5%{
@@ -803,15 +842,6 @@
                 of your budget, requirements, or location, get in touch and
                 we’ll see if we can work something out. It’ll&nbsp;be&nbsp;cool.</p>
 
-                <blockquote class="pull-quote" id="quote:markus-klug">
-                    <p>I learned more about CSS architecture in my three-day
-                       workshop with Harry than I did in the 10 years before. I
-                       got my money’s worth many times over.</p>
-                    <b class="source  pull-quote__source">
-                        <a href="https://twitter.com/opus131">Markus Klug</a>
-                    </b>
-                </blockquote>
-
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
                     class="btn  btn--full  btn--large">Get in touch!</a>
@@ -912,17 +942,6 @@
                    would not stretch to getting me on-site for a number of days,
                    but do require the same type and quality of input.</p>
 
-                <blockquote class="pull-quote" id="quote:dan-rathbone">
-                    <p>Harry is acutely aware of the performance implications
-                    of what we do and is always keen to improve the speed of the
-                    things we’re working on. He’s great at rationalising and
-                    pushing back on design requirements that could adversely
-                    effect performance and working out better and faster ways of
-                    achieving the same result.</p>
-                    <b class="source  pull-quote__source">Dan Rathbone, Lead
-                       Performance Engineer, BSkyB</b>
-                </blockquote>
-
             </div><!-- /content__main
 
 
@@ -931,7 +950,7 @@
 
          --><div class="content__item  content__sub">
 
-                <blockquote class="pull-quote" id="quote:rob-farnell">
+                <blockquote class="pull-quote" id="quote:rob-farnell-01">
                     <p>More people need to benefit from what he has to offer.</p>
                     <b class="source  pull-quote__source">Rob Farnell, Lead
                        Creative Designer, BSkyB</b>
@@ -1010,18 +1029,6 @@
                 previous and upcoming engagements, please see my
                 <a href="/speaking/">speaking page</a>.</p>
 
-                <blockquote class="pull-quote" id="quote:matt-saunders">
-                    <p>We hired Harry for a day to help us plan the front-end of
-                       a large project. In an intense, eight-hour session, we
-                       discussed many of the fundamental challenges ahead, which
-                       enabled us to put some processes in place to assist with
-                       the build process. We had a very tight deadline and I can
-                       honestly say that, with this direction, development has
-                       gone signifcantly more smoothly than it would have.</p>
-                       <b class="source  pull-quote__source"><a href="https://twitter.com/matt5409">Matt
-                         Saunders</a>, Web Developer, <a href="http://www.zealmedia.co.uk/">Zeal Media</a></b>
-                </blockquote>
-
             </div><!-- /content__main
 
 
@@ -1059,8 +1066,18 @@
 
 
     <div class="band  band--04" id="section:testimonials">
-        <h2 class="tagline">Nice things that people have said</h2>
+        <h2 class="tagline">Nice things people have said about me</h2>
     </div><!-- /band -->
+
+
+
+
+
+    <ul class="tabs">
+        <li><a href="#section-consultancy" class="js-scroll">Consultancy</a></li>
+        <li><a href="#section-code-reviews" class="js-scroll">Code reviews</a></li>
+        <li><a href="#section-speaking" class="js-scroll">Speaking</a></li>
+    </ul>
 
 
 
@@ -1074,9 +1091,85 @@
 
                 <h2>Testimonials</h2>
 
-                <p>I’ve been lucky enough to work with some great people who
-                   have said some really nice things about me. I have included a
-                   few of these nice things below…</p>
+                <p>I’ve been lucky enough to work with some really great people
+                   over the years, and some of them have said some really nice
+                   things about me:</p>
+
+                <h3 class="quote-header">Consultancy client</h3>
+                <blockquote class="pull-quote" id="quote:matt-saunders">
+                    <p>We hired Harry for a day to help us plan the front-end of
+                    a large project. In an intense, eight-hour session, we
+                    discussed many of the fundamental challenges ahead, which
+                    enabled us to put some processes in place to assist with
+                    the build process. We had a very tight deadline and I can
+                    honestly say that, with this direction, development has
+                    gone signifcantly more smoothly than it would have.</p>
+                    <b class="source  pull-quote__source"><a href="https://twitter.com/matt5409">Matt
+                        Saunders</a>, Web Developer, <a href="http://www.zealmedia.co.uk/">Zeal Media</a></b>
+                </blockquote>
+
+                <hr class="rule" />
+
+                <h3 class="quote-header">Colleague</h3>
+                <blockquote class="pull-quote" id="quote:rob-farnell-02">
+                    <p>Lightning fast—with incredible passion and ability that I haven’t
+                    experienced with anyone else—Harry has great dialogue with design teams, is
+                    firm in his front-end beliefs, and challenges design decisions that will
+                    impact the performance of large, highly trafficed sites. However, he is often willing
+                    to compromise, delivering that <em>extra bit</em> that designers always look for and,
+                    ultimately, he contributes to fantastic products.</p>
+                    <b class="source  pull-quote__source">Rob Farnell, Lead
+                        Creative Designer, BSkyB</b>
+                </blockquote>
+
+                <hr class="rule" />
+
+                <h3 class="quote-header">Private workshop/consultancy client</h3>
+                <blockquote class="pull-quote" id="quote:markus-klug">
+                    <p>I learned more about CSS architecture in my three-day
+                    workshop with Harry than I did in the 10 years before. I
+                    got my money’s worth many times over.</p>
+                    <b class="source  pull-quote__source">
+                        <a href="https://twitter.com/opus131">Markus Klug</a>
+                    </b>
+                </blockquote>
+
+                <hr class="rule" />
+
+                <h3 class="quote-header">Colleague</h3>
+                <blockquote class="pull-quote" id="quote:dan-rathbone">
+                    <p>Harry is acutely aware of the performance implications
+                    of what we do and is always keen to improve the speed of the
+                    things we’re working on. He’s great at rationalising and
+                    pushing back on design requirements that could adversely
+                    effect performance and working out better and faster ways of
+                    achieving the same result.</p>
+                    <b class="source  pull-quote__source"><a href="http://thetrilemma.wordpress.com/">Dan Rathbone</a>,
+                       Lead Performance Engineer, BSkyB</b>
+                </blockquote>
+
+                <hr class="rule" />
+
+                <h3 class="quote-header">Workshop attendee</h3>
+                <blockquote class="pull-quote" id="quote:rob-matwiejczyk">
+                    <p>Harry gave a great workshop today. Really enjoyed it, great crowd.
+                    Makes me proud to be a front end developer! […] Just when I thought
+                    I had it figured out, he blew everything out of the water. Can’t wait
+                    ’til my next projects!</p>
+                    <b class="source  pull-quote__source"><a href="https://twitter.com/RobMatwiejczyk/">Rob Matwiejczyk</a></b>
+                </blockquote>
+
+                <hr class="rule" />
+
+                <h3 class="quote-header">Events organiser</h3>
+                <blockquote class="pull-quote" id="quote:kimb-jones">
+                    <p>Harry was such a gent yesterday. Love doing events with that guy.</p>
+                    <b class="source  pull-quote__source"><a href="https://twitter.com/mkjones">Kimb Jones</a>,
+                       Director, <a href="http://makedo.in/">Make-Do</a></b>
+                </blockquote>
+
+                <p>If you’d like to be able to say nice things about me,
+                <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together">let’s work together on some stuff</a>!</p>
 
             </div><!-- /content__main
 

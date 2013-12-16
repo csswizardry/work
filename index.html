@@ -573,6 +573,9 @@
 
             @media screen and (min-width: 720px) {
 
+                /**
+                 * Two-column layout on large enough devices.
+                 */
                 .client-list__item {
                     display: inline-block;
                     vertical-align: middle;
@@ -581,36 +584,53 @@
                     border-width: 1px 0 0 1px;
                 }
 
+                /**
+                 * Remove the borders from the first two (-n+2) items.
+                 */
                 .client-list__item:nth-of-type(-n+2) {
                     border-top-color: transparent;
                 }
 
+                /**
+                 * Remove the borders from the first item in each pair (2n+1).
+                 */
                 .client-list__item:nth-of-type(2n+1) {
                     border-left-color: transparent;
                 }
 
+                /**
+                 * Full-width items if it is the first in a theoretical pair,
+                 * but the second in said pair is not present. Courtesy of
+                 * Heydon Pickering: heydonworks.com/article/tetris-the-power-of-css
+                 */
                 .client-list__item:nth-of-type(2n+1):last-child {
                     width: 100%;
                 }
 
             }
 
+                /**
+                 * 1. Logos are actually mask images, and their colours are set
+                 *    via CSS.
+                 * 2. Make all logos much paler when we hover the list of logos.
+                 * 3. Make the single, currently hovered logo much darker.
+                 */
                 .client-list__logo {
                     display: block;
                     margin: 0 auto;
                     height: 47px;
-                    background-color: #e4e4e4;
+                    background-color: #e4e4e4; /* [1] */
                     -webkit-transition: 0.5s;
                        -moz-transition: 0.5s;
                             transition: 0.5s;
                 }
 
                 .client-list:hover .client-list__logo {
-                    background-color: #f5f5f5;
+                    background-color: #f5f5f5; /* [2] */
                 }
 
                 .client-list__item:hover .client-list__logo {
-                    background-color: #ccc;
+                    background-color: #ccc; /* [3] */
                 }
 
 

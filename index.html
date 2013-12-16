@@ -562,10 +562,20 @@
         }
 
             .client-list__item {
-                float: left;
-                width: 50%;
                 padding: 12px;
                 border: 0 solid #f0f0f0;
+                border-top-width: 1px;
+            }
+
+            .client-list__item:first-child {
+                border-top-color: transparent;
+            }
+
+        @media screen and (min-width: 480px) {
+
+            .client-list__item {
+                float: left;
+                width: 50%;
                 border-width: 1px 0 0 1px;
             }
 
@@ -576,6 +586,12 @@
             .client-list__item:nth-of-type(2n+1) {
                 border-left-color: transparent;
             }
+
+            .client-list__item:nth-of-type(2n+1):last-child {
+                width: 100%;
+            }
+
+        }
 
                 .client-list__logo {
                     display: block;

@@ -552,6 +552,65 @@
 
 
         /**
+         * Client-list.
+         */
+        .client-list {
+            list-style: none;
+            margin-left: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+            .client-list__item {
+                padding: 12px;
+                border: 0 solid #f0f0f0;
+                border-top-width: 1px;
+            }
+
+            .client-list__item:first-child {
+                border-top-color: transparent;
+            }
+
+            @media screen and (min-width: 480px) {
+
+                .client-list__item {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 50%;
+                    padding: 24px;
+                    border-width: 1px 0 0 1px;
+                }
+
+                .client-list__item:nth-of-type(-n+2) {
+                    border-top-color: transparent;
+                }
+
+                .client-list__item:nth-of-type(2n+1) {
+                    border-left-color: transparent;
+                }
+
+                .client-list__item:nth-of-type(2n+1):last-child {
+                    width: 100%;
+                }
+
+            }
+
+                .client-list__logo {
+                    display: block;
+                    margin: 0 auto;
+                    height: 47px;
+                    background-color: #e4e4e4;
+                    -webkit-transition: 0.2s;
+                       -moz-transition: 0.2s;
+                            transition: 0.2s;
+                }
+
+                .client-list__logo:hover {
+                    background-color: #ccc;
+                }
+
+
+        /**
          * Buttons. Lifted partly from beautons: github.com/csswizardry/beautons
          */
         .btn {
@@ -841,6 +900,34 @@
                 <b>quality products</b> and gaining new experiences. Regardless
                 of your budget, requirements, or location, get in touch and
                 we’ll see if we can work something out. It’ll&nbsp;be&nbsp;cool.</p>
+
+                <ul class="client-list">
+
+                    <li class="client-list__item">
+                        <img src="img/brands/sky.png" alt="BSkyB" class="client-list__logo" />
+                    </li><!--
+
+                 --><li class="client-list__item">
+                        <img src="img/brands/smashing-magazine.png" alt="Smashing Magazine" class="client-list__logo" />
+                    </li><!--
+
+                 --><li class="client-list__item">
+                        <img src="img/brands/travelodge.png" alt="Travelodge" class="client-list__logo" />
+                    </li><!--
+
+                 --><li class="client-list__item">
+                        <img src="img/brands/rizla.png" alt="Rizla" class="client-list__logo" />
+                    </li><!--
+
+                    <li class="client-list__item">
+                        <img src="img/brands/ft.png" alt="Financial Times" class="client-list__logo" />
+                    </li>--><!--
+
+                 --><li class="client-list__item">
+                        <img src="img/brands/booking.com.png" alt="Booking.com" class="client-list__logo" />
+                    </li>
+
+                </ul>
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"

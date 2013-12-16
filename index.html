@@ -600,12 +600,16 @@
                     margin: 0 auto;
                     height: 47px;
                     background-color: #e4e4e4;
-                    -webkit-transition: 0.2s;
-                       -moz-transition: 0.2s;
-                            transition: 0.2s;
+                    -webkit-transition: 0.5s;
+                       -moz-transition: 0.5s;
+                            transition: 0.5s;
                 }
 
-                .client-list__logo:hover {
+                .client-list:hover .client-list__logo {
+                    background-color: #f5f5f5;
+                }
+
+                .client-list__item:hover .client-list__logo {
                     background-color: #ccc;
                 }
 

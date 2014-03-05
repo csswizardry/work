@@ -530,6 +530,9 @@
             background-color: #9f102e;
         }
 
+        /**
+         * Simple availability calendar.
+         */
         .calendar {
             width: 100%;
             table-layout: fixed;
@@ -553,9 +556,19 @@
                 text-align: right;
             }
 
+            /**
+             * 1. Snap cells to the baseline grid.
+             * 2. Show the user that there is more information on hover.
+             * 3. Kellum method for hiding text.
+             * 4. Stop text from pushing cells open even when it’s hidden.
+             */
             .calendar__month {
-                height: 24px;
-                cursor: help;
+                height: 24px; /* [1] */
+                cursor: help; /* [2] */
+                text-indent: 100%; /* [3] */
+                overflow: hidden; /* [3] */
+                white-space: nowrap; /* [3] */
+                font-size: 0; /* [4] */
                 opacity: 0.5;
                 -webkit-transition: 0.5s;
                    -moz-transition: 0.5s;
@@ -843,6 +856,10 @@
          */
         ::selection         { background-color: #f43059; color: #fff; }
         ::-moz-selection    { background-color: #f43059; color: #fff; }
+        .accessibility {
+            position: absolute;
+            left: -99999px;
+        }
 
     </style>
 
@@ -904,24 +921,24 @@
                 <table class="calendar" id="section:availability">
                     <thead>
                         <tr>
-                            <th colspan="6" class="calendar__year  calendar__year--this">Jan 2014</th>
-                            <th colspan="6" class="calendar__year  calendar__year--next">Dec 2014</th>
+                            <th colspan="6" class="calendar__year  calendar__year--this">Jan 2014<span class="accessibility">–Jun 2014</span></th>
+                            <th colspan="6" class="calendar__year  calendar__year--next"><span class="accessibility">Jul 2014–</span>Dec 2014</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="calendar__month  calendar__month--unavailable" title="January – Unavailable"></td>
-                            <td class="calendar__month  calendar__month--unavailable" title="February – Unavailable"></td>
-                            <td class="calendar__month  calendar__month--unavailable  calendar__month--current" title="March – Unavailable"></td>
-                            <td class="calendar__month  calendar__month--unavailable" title="April – Unavailable"></td>
-                            <td class="calendar__month  calendar__month--limited" title="May – Limited"></td>
-                            <td class="calendar__month  calendar__month--limited" title="June – Limited"></td>
-                            <td class="calendar__month  calendar__month--available" title="July – Available"></td>
-                            <td class="calendar__month  calendar__month--available" title="August – Available"></td>
-                            <td class="calendar__month  calendar__month--available" title="September – Available"></td>
-                            <td class="calendar__month  calendar__month--available" title="October – Available"></td>
-                            <td class="calendar__month  calendar__month--available" title="November – Available"></td>
-                            <td class="calendar__month  calendar__month--available" title="December – Available"></td>
+                            <td class="calendar__month  calendar__month--unavailable" title="January – Unavailable">Unavailable</td>
+                            <td class="calendar__month  calendar__month--unavailable" title="February – Unavailable">Unavailable</td>
+                            <td class="calendar__month  calendar__month--unavailable  calendar__month--current" title="March – Unavailable">Unavailable</td>
+                            <td class="calendar__month  calendar__month--unavailable" title="April – Unavailable">Unavailable</td>
+                            <td class="calendar__month  calendar__month--limited" title="May – Limited">Limited</td>
+                            <td class="calendar__month  calendar__month--limited" title="June – Limited">Limited</td>
+                            <td class="calendar__month  calendar__month--available" title="July – Available">Available</td>
+                            <td class="calendar__month  calendar__month--available" title="August – Available">Available</td>
+                            <td class="calendar__month  calendar__month--available" title="September – Available">Available</td>
+                            <td class="calendar__month  calendar__month--available" title="October – Available">Available</td>
+                            <td class="calendar__month  calendar__month--available" title="November – Available">Available</td>
+                            <td class="calendar__month  calendar__month--available" title="December – Available">Available</td>
                         </tr>
                     </tbody>
                 </table>

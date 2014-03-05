@@ -539,7 +539,7 @@
             border-spacing: 1px;
         }
 
-            .calendar__year {
+            .calendar__half {
                 font-weight: 300;
                 color: #999;
                 font-size: 12px;
@@ -548,11 +548,11 @@
                 font-family: sans-serif;
             }
 
-            .calendar__year--this {
+            .calendar__half--first {
                 text-align: left;
             }
 
-            .calendar__year--next {
+            .calendar__half--second {
                 text-align: right;
             }
 
@@ -876,7 +876,7 @@
 
 
 
-    <div class="band  band--01" id="section-consultancy">
+    <div class="[ band  band--01 ]" id="section-consultancy">
 
         <a href="http://csswizardry.com" title="Return to CSS Wizardry homepage" class="logo">
             <img src="data:image/png;base64,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" alt="CSS Wizardry" class="logo__img" width="64" height="64">
@@ -904,7 +904,7 @@
 
         <section class="content">
 
-            <div class="content__item  content__sub">
+            <div class="[ content__item  content__sub ]">
 
                 <blockquote class="pull-quote" id="quote:andrew-clarke">
                     <p>I have learned so much in terms of OOCSS and other things
@@ -921,36 +921,36 @@
                 <table class="calendar" id="section:availability">
                     <thead>
                         <tr>
-                            <th colspan="6" class="calendar__year  calendar__year--this">Jan 2014<span class="accessibility">–Jun 2014</span></th>
-                            <th colspan="6" class="calendar__year  calendar__year--next"><span class="accessibility">Jul 2014–</span>Dec 2014</th>
+                            <th colspan="6" class="[ calendar__half  calendar__half--first ]">Jan 2014<span class="accessibility">–Jun 2014</span></th>
+                            <th colspan="6" class="[ calendar__half  calendar__half--second ]"><span class="accessibility">Jul 2014–</span>Dec 2014</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="calendar__month  calendar__month--unavailable" title="January – Unavailable">Unavailable</td>
-                            <td class="calendar__month  calendar__month--unavailable" title="February – Unavailable">Unavailable</td>
-                            <td class="calendar__month  calendar__month--unavailable  calendar__month--current" title="March – Unavailable">Unavailable</td>
-                            <td class="calendar__month  calendar__month--unavailable" title="April – Unavailable">Unavailable</td>
-                            <td class="calendar__month  calendar__month--limited" title="May – Limited">Limited</td>
-                            <td class="calendar__month  calendar__month--limited" title="June – Limited">Limited</td>
-                            <td class="calendar__month  calendar__month--available" title="July – Available">Available</td>
-                            <td class="calendar__month  calendar__month--available" title="August – Available">Available</td>
-                            <td class="calendar__month  calendar__month--available" title="September – Available">Available</td>
-                            <td class="calendar__month  calendar__month--available" title="October – Available">Available</td>
-                            <td class="calendar__month  calendar__month--available" title="November – Available">Available</td>
-                            <td class="calendar__month  calendar__month--available" title="December – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--unavailable ]" title="January – Unavailable">Unavailable</td>
+                            <td class="[ calendar__month  calendar__month--unavailable ]" title="February – Unavailable">Unavailable</td>
+                            <td class="[ calendar__month  calendar__month--unavailable  calendar__month--current ]" title="March – Unavailable">Unavailable</td>
+                            <td class="[ calendar__month  calendar__month--unavailable ]" title="April – Unavailable">Unavailable</td>
+                            <td class="[ calendar__month  calendar__month--limited ]" title="May – Limited">Limited</td>
+                            <td class="[ calendar__month  calendar__month--limited ]" title="June – Limited">Limited</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="July – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="August – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="September – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="October – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="November – Available">Available</td>
+                            <td class="[ calendar__month  calendar__month--available ]" title="December – Available">Available</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <hr class="rule">
 
-                <p class="availability  availability--available">
+                <p class="[ availability  availability--available ]">
                 I am <strong>available</strong> for development and consultancy
                 projects starting May, 2014.
                 </p>
 
-                <hr class="rule  rule--mobile">
+                <hr class="[ rule  rule--mobile ]">
 
             </div><!-- /content__sub
 
@@ -958,7 +958,7 @@
 
 
 
-         --><div class="content__item  content__main">
+         --><div class="[ content__item  content__main ]">
 
                 <h2>I work with tech teams to build great products…</h2>
 
@@ -1032,7 +1032,7 @@
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Let%E2%80%99s%20work%20together"
-                    class="btn  btn--full  btn--large">Get in touch!</a>
+                    class="[ btn  btn--full  btn--large ]">Get in touch!</a>
                 </p>
 
                 <!--
@@ -1058,7 +1058,7 @@
 
 
 
-    <div class="band  band--02" id="section-code-reviews">
+    <div class="[ band  band--02 ]" id="section-code-reviews">
         <h2 class="tagline">Improve your product and learn</h2>
     </div><!-- /band -->
 
@@ -1080,7 +1080,7 @@
 
         <section class="content">
 
-            <div class="content__item  content__main">
+            <div class="[ content__item  content__main ]">
 
                 <h2>Code reviews</h2>
 
@@ -1136,7 +1136,7 @@
 
 
 
-         --><div class="content__item  content__sub">
+         --><div class="[ content__item  content__sub ]">
 
                 <blockquote class="pull-quote" id="quote:rob-farnell-01">
                     <p>More people need to benefit from what he has to offer.</p>
@@ -1152,7 +1152,7 @@
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Code%20review"
-                    class="btn  btn--full  btn--large">Arrange a review</a>
+                    class="[ btn  btn--full  btn--large ]">Arrange a review</a>
                 </p>
 
                 <hr class="rule">
@@ -1174,7 +1174,7 @@
 
 
 
-    <div class="band  band--03" id="section-speaking">
+    <div class="[ band  band--03 ]" id="section-speaking">
         <h2 class="tagline">Speaking, workshops and training</h2>
     </div><!-- /band -->
 
@@ -1194,9 +1194,9 @@
 
     <div class="wrapper">
 
-        <section class="content  content--rev">
+        <section class="[ content  content--rev ]">
             
-            <div class="content__item  content__main">
+            <div class="[ content__item  content__main ]">
 
                 <h2>Speaking and workshops</h2>
 
@@ -1229,7 +1229,7 @@
 
 
 
-            --><div class="content__item  content__sub">
+            --><div class="[ content__item  content__sub ]">
 
                 <blockquote class="pull-quote" id="quote:peter-van-grieken">
                     <p>So glad I did [Harry’s] workshop [on] Wednesday. An entire day of this,
@@ -1241,7 +1241,7 @@
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Request%20to%20speak"
-                    class="btn  btn--full  btn--large">Book me</a>
+                    class="[ btn  btn--full  btn--large ]">Book me</a>
                 </p>
 
             </div><!-- /content__sub -->
@@ -1279,9 +1279,9 @@
 
     <div class="wrapper">
 
-        <section class="content  content--rev">
+        <section class="[ content  content--rev ]">
             
-            <div class="content__item  content__main">
+            <div class="[ content__item  content__main ]">
 
                 <h2>Testimonials</h2>
 
@@ -1374,11 +1374,11 @@
 
 
 
-            --><div class="content__item  content__sub">
+            --><div class="[ content__item  content__sub ]">
 
                 <p>
                     <a href="mailto:harry@csswizardry.com?subject=Request%20to%20speak"
-                    class="btn  btn--full  btn--large">Hire me</a>
+                    class="[ btn  btn--full  btn--large ]">Hire me</a>
                 </p>
 
             </div><!-- /content__sub -->

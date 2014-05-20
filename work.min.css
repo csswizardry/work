@@ -133,9 +133,16 @@ blockquote p:last-of-type {
   margin-bottom: 0;
 }
 
+/**
+ * 1. The em dashes in the source are 18px wide, so this will allow us to quasi
+ *    hang them.
+ */
 .source {
   display: block;
-  text-indent: 0;
+  text-indent: -18px;
+  /* [1] */
+  padding-left: 18px;
+  /* [1] */
 }
 
 .source:before {

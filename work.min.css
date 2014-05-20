@@ -692,7 +692,7 @@ blockquote p:last-of-type {
   margin: 0 auto;
   height: auto;
   max-height: 47px;
-  background-color: #e4e4e4;
+  background-color: #ddd;
   /* [1] */
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;

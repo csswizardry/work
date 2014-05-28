@@ -781,7 +781,9 @@ blockquote {
 
 
 /**
- * quote-header.
+ * Quote header.
+ *
+ * 1. Align text with quote’s indented copy.
  */
 .quote-header {
     font-family: sans-serif;
@@ -789,8 +791,8 @@ blockquote {
     font-size: 12px;
     font-size: 0.75rem;
     line-height: 2;
-    text-align: right;
     margin-bottom: 0;
+    padding-left: 48px; /* [1] */
     color: #999;
 }
 

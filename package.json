@@ -1,0 +1,25 @@
+{
+  "name": "work",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/csswizardry/work.git"
+  },
+  "author": "Harry Roberts <harry@csswizardry.com>",
+  "license": "N/A",
+  "bugs": {
+    "url": "https://github.com/csswizardry/work/issues"
+  },
+  "homepage": "https://github.com/csswizardry/work",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-inline": "^0.3.0"
+  }
+}

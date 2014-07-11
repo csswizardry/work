@@ -563,6 +563,7 @@ blockquote {
         white-space: nowrap; /* [3] */
         font-size: 0; /* [4] */
         opacity: 0.5;
+        background-color: #3f990f;
         -webkit-transition: 0.5s;
            -moz-transition: 0.5s;
                 transition: 0.5s;
@@ -578,10 +579,6 @@ blockquote {
 
     .calendar__month--limited {
         background-color: #ea6c00;
-    }
-
-    .calendar__month--available {
-        background-color: #3f990f;
     }
 
     .calendar__month--current {

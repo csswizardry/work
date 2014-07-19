@@ -184,35 +184,35 @@ blockquote {
             background-size: cover;
 }
 
-.band--01   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/01--small.jpg); }
-.band--02   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/02--small.jpg); background-position: right center; }
-.band--03   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/03--small.jpg); }
-.band--04   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/04--small.jpg); background-position: left center; }
+.band--01   { background-image: url(img/css/bands/01--small.jpg); }
+.band--02   { background-image: url(img/css/bands/02--small.jpg); background-position: right center; }
+.band--03   { background-image: url(img/css/bands/03--small.jpg); }
+.band--04   { background-image: url(img/css/bands/04--small.jpg); background-position: left center; }
 
 @media screen and (min-width: 480px) {
 
-    .band--01   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/01--medium.jpg); }
-    .band--02   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/02--medium.jpg); }
-    .band--03   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/03--medium.jpg); }
-    .band--04   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/04--medium.jpg); }
+    .band--01   { background-image: url(img/css/bands/01--medium.jpg); }
+    .band--02   { background-image: url(img/css/bands/02--medium.jpg); }
+    .band--03   { background-image: url(img/css/bands/03--medium.jpg); }
+    .band--04   { background-image: url(img/css/bands/04--medium.jpg); }
 
 }
 
 @media screen and (min-width: 720px) {
 
-    .band--01   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/01--large.jpg); }
-    .band--02   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/02--large.jpg); }
-    .band--03   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/03--large.jpg); }
-    .band--04   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/04--large.jpg); }
+    .band--01   { background-image: url(img/css/bands/01--large.jpg); }
+    .band--02   { background-image: url(img/css/bands/02--large.jpg); }
+    .band--03   { background-image: url(img/css/bands/03--large.jpg); }
+    .band--04   { background-image: url(img/css/bands/04--large.jpg); }
 
 }
 
 @media screen and (min-width: 1024px) {
 
-    .band--01   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/01--huge.jpg); }
-    .band--02   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/02--huge.jpg); }
-    .band--03   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/03--huge.jpg); }
-    .band--04   { background-image: url(http://csswizardry.a.cdnify.io/work/img/css/bands/04--huge.jpg); }
+    .band--01   { background-image: url(img/css/bands/01--huge.jpg); }
+    .band--02   { background-image: url(img/css/bands/02--huge.jpg); }
+    .band--03   { background-image: url(img/css/bands/03--huge.jpg); }
+    .band--04   { background-image: url(img/css/bands/04--huge.jpg); }
 
 }
 

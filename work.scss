@@ -512,7 +512,16 @@ blockquote {
 .availability {
     text-align: center;
     padding: 12px 24px;
-    color: #fff;
+
+    &,
+    a {
+        color: #fff;
+    }
+
+    a {
+        font-weight: inherit;
+    }
+
 }
 
 .availability--available {

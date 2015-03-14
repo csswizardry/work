@@ -665,7 +665,7 @@ blockquote {
         /**
          * Full-width items if it is the first in a theoretical pair,
          * but the second in said pair is not present. Courtesy of
-         * Heydon Pickering: heydonworks.com/article/tetris-the-power-of-css
+         * Heydon Pickering: heydonworks.com/article/tetris-and-the-power-of-css
          */
         .client-list__item:nth-of-type(2n+1):last-child {
             width: 100%;
